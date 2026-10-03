@@ -94,4 +94,4 @@ footer { background: var(--nuit); color: #a9b7bf; text-align: center; padding: 2
     .section { padding: 40px 20px; }
     .cartes.larges .carte { width: 100%; }
     .nav-pages { padding: 20px; }
-}
+    .devise { font-size: 12px; letter-spacing: 1px; padding: 7px 14px; }
