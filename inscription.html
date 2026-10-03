@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Complexe Scolaire Shalom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero petit">
+        <nav>
+            <a href="index.html" class="nom-site">🕊️ Shalom</a>
+            <div class="liens-nav">
+                <a href="index.html">Accueil</a>
+                <a href="apropos.html">À propos</a>
+                <a href="classes.html">Nos Classes</a>
+                <a href="contact.html" class="actif">Contact</a>
+                <a href="actualites.html">Actualités</a>
+                <a href="galerie.html">Galerie</a>
+            </div>
+        </nav>
+        <div class="entete-page">
+            <h1>Inscrire un élève</h1>
+            <p>Rentrée scolaire 2026-2027</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>Classes ouvertes</h2>
+        <div class="cartes larges">
+            <div class="carte"><span class="etiquette">6 à 11 ans</span><h3>Primaire</h3><p>Du CP au CM2</p></div>
+            <div class="carte"><span class="etiquette">Collège</span><h3>Moyen</h3><p>De la 6ème à la 3ème</p></div>
+            <div class="carte"><span class="etiquette">Lycée</span><h3>Secondaire</h3><p>De la 2nde à la Terminale</p></div>
+        </div>
+    </section>
+
+    <section class="section alt">
+        <h2>Comment s'inscrire</h2>
+        <div class="cartes larges">
+            <div class="carte">
+                <h3>📄 Pièces à fournir</h3>
+                <ul>
+                    <li>Extrait d'acte de naissance de l'élève</li>
+                    <li>Photos d'identité</li>
+                    <li>Derniers bulletins ou certificat de scolarité</li>
+                    <li>Diplôme (CEPE ou BEPC) selon la classe</li>
+                    <li>Pièce d'identité du parent ou tuteur</li>
+                </ul>
+            </div>
+            <div class="carte">
+                <h3>✅ Étapes</h3>
+                <ol>
+                    <li>Rassembler les pièces</li>
+                    <li>Se présenter à l'école à Gaki ou appeler</li>
+                    <li>Remplir la fiche d'inscription</li>
+                    <li>Recevoir la confirmation de l'école</li>
+                </ol>
+                <p style="margin-top:10px;">Les frais de scolarité sont communiqués par l'école.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Pré-inscription par WhatsApp</h2>
+        <p class="texte-centre">Remplissez ce formulaire : votre message sera prêt à envoyer à l'école.</p>
+        <form class="formulaire" onsubmit="envoyer(event)">
+            <label>Nom de l'élève</label>
+            <input type="text" name="eleve" required>
+            <label>Classe souhaitée</label>
+            <select name="classe" required>
+                <option value="">Choisir...</option>
+                <option>CP</option><option>CE1</option><option>CE2</option><option>CM1</option><option>CM2</option>
+                <option>6ème</option><option>5ème</option><option>4ème</option><option>3ème</option>
+                <option>2nde</option><option>1ère</option><option>Terminale</option>
+            </select>
+            <label>Nom du parent ou tuteur</label>
+            <input type="text" name="parent" required>
+            <label>Votre téléphone</label>
+            <input type="tel" name="tel" required>
+            <button class="btn wa" type="submit">💬 Envoyer sur WhatsApp</button>
+        </form>
+    </section>
+
+    <div class="nav-pages">
+        <a href="contact.html">← Contact</a>
+        <a href="classes.html">Nos Classes →</a>
+    </div>
+
+    <footer>
+        <p>© 2026 Complexe Scolaire Shalom — Gaki, Doba, Tchad | BP 7021 | Tél : 66 30 11 04 / 91 24 16 79</p>
+    </footer>
+
+    <script>
+        function envoyer(e) {
+            e.preventDefault();
+            var f = e.target;
+            var msg = "Bonjour, je souhaite inscrire un élève au Complexe Scolaire Shalom.\nÉlève : " + f.eleve.value + "\nClasse : " + f.classe.value + "\nParent/tuteur : " + f.parent.value + "\nTéléphone : " + f.tel.value;
+            window.open("https://wa.me/23566301104?text=" + encodeURIComponent(msg), "_blank");
+        }
+    </script>
+</body>
+</html>
